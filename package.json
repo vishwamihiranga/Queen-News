@@ -1,7 +1,7 @@
 {
-  "name": "qr.vercel",
+  "name": "Queen-News-Bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Queen News bot Coded by DarkWinzo",
   "main": "index.js",
   "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
