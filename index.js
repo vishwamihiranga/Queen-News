@@ -17,29 +17,14 @@ const util = require('util')
 const {
   Queen_Connect,
   Queen_Msg,
-  
-  Hiru_newsModule,
   Derana_newsModule,
   Esana_newsModule,
-  Nasa_newsModule,
-  Tech_newsModule,
-  En_Tech_newsModule,
   Notice_newsModule,
-  
   post_EsanaPosted,
-  post_HiruPosted,
   post_DeranaPosted,
-  post_TechPosted,
-  post_EnTechPosted,
-  post_NasaPosted,
   post_NoticePosted,
-  
   get_EsanaPosted,
-  get_HiruPosted,
   get_DeranaPosted,
-  get_TechPosted,
-  get_EnTechPosted,
-  get_NasaPosted,
   get_NoticePosted
 } = require('queen-news')
 
@@ -48,9 +33,7 @@ const {
   PREFIX,
   USER_NAME,
   PASSWORD,
-  GROUP_JID,
-  NASA_GROUP_JID,
-  TECH_GROUP_JID
+  GROUP_JID
 } = require("./config")
 
 async function QueenWa() {
@@ -71,18 +54,10 @@ async function QueenWa() {
   conn.ev.on('creds.update', saveCreds);
 
   conn.ev.on("connection.update", async (update) => { Queen_Connect(conn, QueenWa, update, jidNormalizedUser, Boom, DisconnectReason, USER_NAME, PASSWORD); });
-/*
-  Hiru_newsModule(conn, post_HiruPosted, get_HiruPosted, GROUP_JID);
-*/
+
   Derana_newsModule( conn,post_DeranaPosted, get_DeranaPosted, GROUP_JID);
-  
+
   Esana_newsModule( conn, post_EsanaPosted, get_EsanaPosted, GROUP_JID);
-  
-  Nasa_newsModule( conn, post_NasaPosted, get_NasaPosted, NASA_GROUP_JID);   
-  
-  Tech_newsModule( conn, post_TechPosted, get_TechPosted, TECH_GROUP_JID);
-     
-  En_Tech_newsModule( conn, post_EnTechPosted, get_EnTechPosted, TECH_GROUP_JID);
   //-----------//
   Notice_newsModule( conn, post_NoticePosted, get_NoticePosted, GROUP_JID);
   //-----------//
