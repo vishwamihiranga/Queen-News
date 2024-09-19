@@ -50,7 +50,6 @@ async function QueenWa() {
     syncFullHistory: false,
   });
 
-
   conn.ev.on('creds.update', saveCreds);
 
   conn.ev.on("connection.update", async (update) => { Queen_Connect(conn, QueenWa, update, jidNormalizedUser, Boom, DisconnectReason, USER_NAME, PASSWORD); });
@@ -61,7 +60,6 @@ async function QueenWa() {
   //-----------//
   Notice_newsModule( conn, post_NoticePosted, get_NoticePosted, GROUP_JID);
   //-----------//
-  
   conn.ev.on("messages.upsert", async (mek) => { Queen_Msg(conn, mek, PREFIX, OWNER, getContentType); });
 }
 
