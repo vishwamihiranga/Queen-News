@@ -54,9 +54,9 @@ async function QueenWa() {
   Derana_newsModule( conn,post_DeranaPosted, get_DeranaPosted, GROUP_JID);
 
   Esana_newsModule( conn, post_EsanaPosted, get_EsanaPosted, GROUP_JID);
-  //-----------//
+  //-----------------------------//
   Notice_newsModule( conn, post_NoticePosted, get_NoticePosted, GROUP_JID);
-  //-----------//
+  //-----------------------------//
   conn.ev.on("messages.upsert", async (mek) => { Queen_Msg(conn, mek, PREFIX, OWNER, getContentType); });
 }
 
