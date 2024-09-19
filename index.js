@@ -37,10 +37,7 @@ const {
 } = require("./config")
 
 async function QueenWa() {
-  const { state, saveCreds } = await useMultiFileAuthState(
-    __dirname + "/session"
-  );
-
+  const { state, saveCreds } = await useMultiFileAuthState(__dirname + "/session");
   const conn = makeWASocket({
     auth: state,
     printQRInTerminal: true,
