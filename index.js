@@ -63,16 +63,11 @@ async function QueenWa() {
   //-----------//
   
   conn.ev.on("messages.upsert", async (mek) => { Queen_Msg(conn, mek, PREFIX, OWNER, getContentType); });
-
 }
 
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8000;
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.get("/", (req, res) => { res.send("Hello World!"); });
 app.listen(port, () => console.log(`Queen-News Server listening on port http://localhost:8000`));
-setTimeout(() => {
-  QueenWa()
-}, 7000);
+setTimeout(() => { QueenWa() }, 7000);
