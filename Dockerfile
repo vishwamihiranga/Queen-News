@@ -16,4 +16,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["pm2-runtime", "start", "index.js"]
+CMD ["start", "index.js"]
